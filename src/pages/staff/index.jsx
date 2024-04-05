@@ -1,13 +1,15 @@
-import { Box, Grid, Paper, Typography, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import { menus } from "../../utils/constant";
+import Legal from "./Legal";
+import Sales from "./Sales";
 
 const Stuff = () => {
   const [currStuff, setCurrStuff] = useState(menus[0] || "");
   const theme = useTheme();
 
   return (
-    <div className="flex_center_display">
+    <div className="flex_center_display" style={{ marginTop: "10px" }}>
       <Box
         className="main_outer_box_widget"
         sx={{
@@ -20,17 +22,21 @@ const Stuff = () => {
           <Grid
             container
             spacing={3}
-            sx={{
-              minHeight: "500px",
-              overflowY: "scroll",
-            }}
+            // sx={{
+            //   minHeight: "500px",
+            //   overflowY: "scroll",
+            // }}
           >
             <Grid item xs={12} md={3}>
               <Box
                 sx={{
                   bgcolor: "#132020",
                   p: 2,
-                  height: "100%",
+                  height: { xs: "auto", md: "600px" },
+                  overflowY: { xs: "auto", md: "scroll" },
+                  // display: "flex",
+                  // flexDirection: { xs: "row", md: "column" },
+                  // flexWrap: "wrap",
                 }}
               >
                 {menus.map((item) => (
@@ -64,6 +70,17 @@ const Stuff = () => {
               >
                 Our Staff
               </Typography>
+
+              <Box
+                sx={{
+                  my: 2,
+                  height: { xs: "auto", md: "530px" },
+                  overflowY: { xs: "auto", md: "scroll" },
+                }}
+              >
+                {currStuff === "Legal" && <Legal />}
+                {currStuff === "Sales" && <Sales />}
+              </Box>
             </Grid>
           </Grid>
         </Box>
