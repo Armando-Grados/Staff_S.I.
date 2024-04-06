@@ -1,8 +1,8 @@
 import { Box, Grid, Typography, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import { menus } from "../../utils/constant";
-import Legal from "./Legal";
-import Sales from "./Sales";
+import StuffData from "./StuffData";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
 const Stuff = () => {
   const [currStuff, setCurrStuff] = useState(menus[0] || "");
@@ -39,6 +39,23 @@ const Stuff = () => {
                   // flexWrap: "wrap",
                 }}
               >
+                <div className="flex_center_display">
+                  <PeopleAltIcon
+                    color="secondary"
+                    sx={{
+                      textAlign: "center",
+                      fontSize: "40px",
+                    }}
+                  />
+                </div>
+                <Typography
+                  align="center"
+                  fontSize={28}
+                  sx={{ color: "white", mb: 2.5 }}
+                >
+                  Meet Stuff
+                </Typography>
+
                 {menus.map((item) => (
                   <Box key={item} sx={{ my: 0.5, width: "100%" }}>
                     <Typography
@@ -78,8 +95,7 @@ const Stuff = () => {
                   overflowY: { xs: "auto", md: "scroll" },
                 }}
               >
-                {currStuff === "Legal" && <Legal />}
-                {currStuff === "Sales" && <Sales />}
+                {currStuff && <StuffData from={currStuff} />}
               </Box>
             </Grid>
           </Grid>

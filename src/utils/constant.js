@@ -25,3 +25,31 @@ export const salesData = [
     name: "Joe Sales",
   },
 ];
+export const marketingData = [
+  {
+    name: "MICHAEL Marketing",
+  },
+  {
+    name: "JOHN Marketing",
+  },
+  {
+    name: "ALISSA Marketing",
+  },
+  {
+    name: "Joe Marketing",
+  },
+];
+export const billingData = [
+  {
+    name: "MICHAEL Billing",
+  },
+  {
+    name: "JOHN Billing",
+  },
+  {
+    name: "ALISSA Billing",
+  },
+  {
+    name: "Joe Billing",
+  },
+];
